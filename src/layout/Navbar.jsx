@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Coffee } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,10 +26,10 @@ const Navbar = () => {
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="flex items-center space-x-3 cursor-pointer group"
+                    className="flex items-center space-x-4 cursor-pointer group"
                 >
-                    <div className="bg-gradient-to-br from-royal-maroon-900 to-royal-maroon-700 p-2 rounded-xl shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                        <Coffee className="text-silver-100 w-6 h-6" />
+                    <div className="relative group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <img src="/logo-navbar.png" alt="Cafe Royal Tea Logo" className="w-20 h-20 object-contain drop-shadow-2xl" />
                     </div>
                     <span className="font-display text-2xl font-black tracking-tighter text-ink-black flex items-center">
                         CAFE <span className="text-gradient-maroon mx-1.5">ROYAL</span> TEA

@@ -1,4 +1,4 @@
-import { Coffee, Instagram, Facebook, MapPin, Phone, Mail } from 'lucide-react';
+import { Instagram, Facebook, MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -8,9 +8,7 @@ const Footer = () => {
             <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-20">
                 <div className="md:col-span-2">
                     <div className="flex items-center space-x-3 mb-8">
-                        <div className="bg-royal-maroon-900 p-2 rounded-lg">
-                            <Coffee className="text-silver-100 w-5 h-5" />
-                        </div>
+                        <img src="/logo.png" alt="Logo" className="w-16 h-16 object-contain drop-shadow-xl hover:scale-110 transition-transform duration-300" />
                         <span className="font-display text-2xl font-black text-ink-black tracking-tighter">
                             CAFE <span className="text-gradient-maroon mx-1">ROYAL</span> TEA
                         </span>

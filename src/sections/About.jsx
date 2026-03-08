@@ -66,8 +66,8 @@ const About = () => {
                         <div className="aspect-[4/5] glass rounded-[3rem] p-6 overflow-hidden group border-white/60 shadow-inner">
                             <div className="absolute inset-0 bg-gradient-to-tr from-royal-maroon-900/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                             <img
-                                src="https://images.unsplash.com/photo-1594631252845-29fc458639a8?auto=format&fit=crop&q=80&w=800&h=1000"
-                                alt="Kerala Tea Culture"
+                                src="/about-us.png"
+                                alt="Cafe Royal Tea Story"
                                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-1000 group-hover:scale-110"
                             />
                         </div>
