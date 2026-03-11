@@ -57,7 +57,7 @@ const Location = () => {
                         <div className="space-y-10">
                             {[
                                 { icon: Clock, title: "Open 24/7", desc: "Always here for your midnight cravings.", color: "text-royal-maroon-900", bg: "bg-royal-maroon-900/5" },
-                                { icon: Phone, title: "Call Us", desc: "For bulk orders & inquiries: +91 89519 91519", color: "text-amber-gold", bg: "bg-amber-gold/5" },
+                                { icon: Phone, title: "Call Us", desc: "For bulk orders & inquiries: +91 89519 91519", color: "text-amber-gold dark:text-royal-maroon-900", bg: "bg-amber-gold/5" },
                                 { icon: MessageSquare, title: "WhatsApp", desc: "Quick chat for takeaway & feedback.", color: "text-royal-maroon-700", bg: "bg-royal-maroon-700/5" }
                             ].map((item, i) => (
                                 <motion.div
@@ -85,14 +85,14 @@ const Location = () => {
                                 className="flex-1 py-8 flex flex-col items-center justify-center gap-3 shadow-2xl shadow-royal-maroon-900/30 group"
                             >
                                 <Phone size={24} className="group-hover:rotate-12 transition-transform" />
-                                <span>CALL NOW</span>
+                                <span className="dark:text-white">CALL NOW</span>
                             </Button>
                             <Button
                                 onClick={() => window.open('https://wa.me/918951991519', '_blank')}
-                                className="flex-1 py-8 flex flex-col items-center justify-center gap-3 !bg-gradient-to-br from-[#25D366] to-[#128C7E] border-none text-white shadow-2xl shadow-[#25D366]/20 hover:from-[#2ecc71] hover:to-[#27ae60] group"
+                                className="flex-1 py-8 flex flex-col items-center justify-center gap-3 !bg-gradient-to-br from-[#25D366] to-[#128C7E] border-none text-white dark:text-white shadow-2xl shadow-[#25D366]/20 hover:from-[#2ecc71] hover:to-[#27ae60] group"
                             >
                                 <WhatsAppIcon size={24} className="group-hover:scale-110 transition-transform" />
-                                <span>WHATSAPP</span>
+                                <span className="text-white">WHATSAPP</span>
                             </Button>
                         </div>
                     </div>

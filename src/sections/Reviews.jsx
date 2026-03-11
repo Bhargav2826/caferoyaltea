@@ -51,7 +51,7 @@ const Reviews = () => {
                                     <Star
                                         key={i}
                                         size={18}
-                                        className={i < review.rating ? "text-amber-gold fill-amber-gold" : "text-royal-maroon-900/10"}
+                                        className={i < review.rating ? "text-amber-gold fill-amber-gold dark:text-royal-maroon-900 dark:fill-royal-maroon-900" : "text-royal-maroon-900/10"}
                                     />
                                 ))}
                             </div>
@@ -65,8 +65,8 @@ const Reviews = () => {
                                     <span className="font-display font-black text-ink-black uppercase tracking-tighter text-sm">{review.name}</span>
                                     <span className="text-[9px] text-ink-black/40 uppercase font-black tracking-widest mt-1">{review.date}</span>
                                 </div>
-                                <div className="w-10 h-10 rounded-full bg-royal-maroon-900/5 flex items-center justify-center group-hover:bg-amber-gold group-hover:shadow-lg group-hover:shadow-amber-gold/20 transition-all duration-300">
-                                    <Coffee size={16} className="text-royal-maroon-900/30 group-hover:text-white" />
+                                <div className="w-10 h-10 rounded-full bg-royal-maroon-900/5 dark:bg-royal-maroon-900/20 flex items-center justify-center group-hover:bg-amber-gold dark:group-hover:bg-royal-maroon-900 group-hover:shadow-lg group-hover:shadow-amber-gold/20 transition-all duration-300">
+                                    <Coffee size={16} className="text-royal-maroon-900/30 dark:text-royal-maroon-700 group-hover:text-white" />
                                 </div>
                             </div>
                         </motion.div>
