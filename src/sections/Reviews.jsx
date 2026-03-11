@@ -51,7 +51,7 @@ const Reviews = () => {
                                     <Star
                                         key={i}
                                         size={18}
-                                        className={i < review.rating ? "text-amber-gold fill-amber-gold dark:text-royal-maroon-900 dark:fill-royal-maroon-900" : "text-royal-maroon-900/10"}
+                                        className={i < review.rating ? "text-amber-gold fill-amber-gold dark:text-amber-gold dark:fill-amber-gold" : "text-royal-maroon-900/10"}
                                     />
                                 ))}
                             </div>
