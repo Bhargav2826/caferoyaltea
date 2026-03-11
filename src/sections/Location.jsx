@@ -34,17 +34,17 @@ const Location = () => {
                                 className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                             />
                             <div className="relative z-10 text-center p-10 glass rounded-[2rem] border-white/40 shadow-2xl backdrop-blur-3xl">
-                                <div className="bg-gradient-to-br from-royal-maroon-900 to-royal-maroon-700 p-8 rounded-full inline-block mb-6 shadow-xl animate-bounce">
-                                    <MapPin className="text-silver-100 w-12 h-12" />
+                                <div className="bg-gradient-to-br from-royal-maroon-900 to-royal-maroon-700 p-4 rounded-full inline-block mb-6 shadow-xl animate-bounce">
+                                    <MapPin className="text-silver-100 w-8 h-8" />
                                 </div>
                                 <h4 className="text-3xl font-display font-black text-ink-black mb-3 tracking-tighter">Visit Our Tea Room</h4>
                                 <p className="text-ink-black/60 mb-8 font-medium italic">XPQH+9QF, KIADB Export Promotion Industrial Area,<br />Whitefield, Bengaluru, Karnataka 560066</p>
                                 <div className="flex justify-center w-full">
                                     <Button
                                         onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=XPQH%2B9QF%2C+KIADB+Export+Promotion+Industrial+Area%2C+Whitefield%2C+Bengaluru%2C+Karnataka+560066', '_blank')}
-                                        className="px-12 py-8 flex flex-col items-center justify-center gap-3 shadow-2xl shadow-royal-maroon-900/40 uppercase tracking-[0.2em] text-[11px] font-black group min-w-[220px]"
+                                        className="px-6 py-3 flex flex-row items-center justify-center gap-2.5 shadow-md shadow-royal-maroon-900/10 uppercase tracking-widest text-xs font-bold group"
                                     >
-                                        <Navigation size={24} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                        <Navigation size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                         <span>OPEN IN MAPS</span>
                                     </Button>
                                 </div>
@@ -79,19 +79,19 @@ const Location = () => {
                             ))}
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-6 pt-6 uppercase tracking-[0.2em] text-[10px] font-black">
+                        <div className="flex flex-col sm:flex-row gap-4 pt-6 uppercase tracking-widest text-xs font-bold">
                             <Button
                                 onClick={() => window.location.href = 'tel:+918951991519'}
-                                className="flex-1 py-8 flex flex-col items-center justify-center gap-3 shadow-2xl shadow-royal-maroon-900/30 group"
+                                className="flex-1 py-3 px-6 flex flex-row items-center justify-center gap-2.5 shadow-md shadow-royal-maroon-900/10 group !bg-royal-maroon-900 hover:!bg-royal-maroon-800 text-white dark:text-white"
                             >
-                                <Phone size={24} className="group-hover:rotate-12 transition-transform" />
-                                <span className="dark:text-white">CALL NOW</span>
+                                <Phone size={18} className="group-hover:rotate-12 transition-transform text-white" />
+                                <span className="text-white">CALL NOW</span>
                             </Button>
                             <Button
                                 onClick={() => window.open('https://wa.me/918951991519', '_blank')}
-                                className="flex-1 py-8 flex flex-col items-center justify-center gap-3 !bg-gradient-to-br from-[#25D366] to-[#128C7E] border-none text-white dark:text-white shadow-2xl shadow-[#25D366]/20 hover:from-[#2ecc71] hover:to-[#27ae60] group"
+                                className="flex-1 py-3 px-6 flex flex-row items-center justify-center gap-2.5 !bg-gradient-to-br from-[#25D366] to-[#128C7E] border-none text-white dark:text-white shadow-md shadow-[#25D366]/20 hover:from-[#2ecc71] hover:to-[#27ae60] group"
                             >
-                                <WhatsAppIcon size={24} className="group-hover:scale-110 transition-transform" />
+                                <WhatsAppIcon size={18} className="group-hover:scale-110 transition-transform" />
                                 <span className="text-white">WHATSAPP</span>
                             </Button>
                         </div>
