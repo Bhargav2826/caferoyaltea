@@ -51,7 +51,7 @@ const Reviews = () => {
                                     <Star
                                         key={i}
                                         size={18}
-                                        className={i < review.rating ? "text-amber-gold fill-amber-gold dark:text-amber-gold dark:fill-amber-gold" : "text-royal-maroon-900/10"}
+                                        className={i < review.rating ? "text-royal-maroon-900 fill-royal-maroon-900 dark:text-amber-gold dark:fill-amber-gold" : "text-royal-maroon-900/10"}
                                     />
                                 ))}
                             </div>
@@ -66,7 +66,7 @@ const Reviews = () => {
                                     <span className="text-[9px] text-ink-black/40 uppercase font-black tracking-widest mt-1">{review.date}</span>
                                 </div>
                                 <div className="w-10 h-10 rounded-full bg-royal-maroon-900/5 dark:bg-royal-maroon-900/20 flex items-center justify-center group-hover:bg-amber-gold dark:group-hover:bg-royal-maroon-900 group-hover:shadow-lg group-hover:shadow-amber-gold/20 transition-all duration-300">
-                                    <Coffee size={16} className="text-royal-maroon-900/30 dark:text-royal-maroon-700 group-hover:text-white" />
+                                    <Coffee size={16} className="text-royal-maroon-900 dark:text-royal-maroon-700 group-hover:text-white" />
                                 </div>
                             </div>
                         </motion.div>
@@ -74,7 +74,7 @@ const Reviews = () => {
                 </div>
 
                 <div className="mt-20 text-center">
-                    <Button variant="outline" className="group">
+                    <Button variant="outline" className="group !bg-royal-maroon-900 !text-white dark:!bg-transparent dark:!text-white border-2 border-royal-maroon-900 dark:border-white">
                         <span className="flex items-center gap-3">
                             Review us on Google Maps
                             <span className="w-2.5 h-2.5 rounded-full bg-amber-gold group-hover:animate-ping" />

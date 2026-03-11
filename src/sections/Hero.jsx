@@ -36,7 +36,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.4 }}
-                    className="text-base md:text-2xl text-ink-black/70 max-w-2xl mx-auto mb-8 md:mb-12 font-sans leading-relaxed font-medium px-4 md:px-0"
+                    className="text-base md:text-2xl text-royal-maroon-900 dark:text-ink-black/70 max-w-2xl mx-auto mb-8 md:mb-12 font-sans leading-relaxed font-medium px-4 md:px-0"
                 >
                     The most authentic ginger tea, snacks, and refreshing juices in the heart of Whitefield, Bengaluru.
                 </motion.p>
