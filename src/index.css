@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-silver-100: #F8FAFC;
@@ -49,15 +50,16 @@
     }
   }
 
-  @keyframes glow {
+  /* Skeleton Loading Animation */
+  --animate-shimmer: shimmer 2s infinite linear;
 
-    0%,
-    100% {
-      filter: drop-shadow(0 0 5px rgba(217, 119, 6, 0.2));
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
     }
 
-    50% {
-      filter: drop-shadow(0 0 15px rgba(217, 119, 6, 0.4));
+    100% {
+      background-position: 200% 0;
     }
   }
 }
@@ -68,6 +70,19 @@
   color: var(--color-ink-black);
   font-family: var(--font-sans);
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root.dark {
+  --color-silver-100: #1E293B;
+  --color-silver-200: #0F172A;
+  --color-silver-300: #475569;
+
+  --color-ink-black: #F8FAFC;
+
+  background-color: var(--color-silver-200);
+  background-image: radial-gradient(circle at 10% 20%, #1E293B 0%, #0F172A 100%);
+  color: #F8FAFC;
 }
 
 h1,
@@ -107,6 +122,13 @@ body {
     radial-gradient(at 100% 0%, rgba(76, 5, 25, 0.03) 0, transparent 50%);
 }
 
+:root.dark .bg-mesh {
+  background-image:
+    radial-gradient(at 0% 0%, rgba(185, 17, 17, 0.1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(249, 115, 22, 0.1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(185, 17, 17, 0.1) 0, transparent 50%);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -134,6 +156,12 @@ body {
   box-shadow: 0 8px 32px 0 rgba(76, 5, 25, 0.05);
 }
 
+:root.dark .glass {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
 .card-hover {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -142,4 +170,23 @@ body {
   transform: translateY(-8px);
   border-color: var(--color-amber-gold);
   box-shadow: 0 20px 40px -15px rgba(76, 5, 25, 0.1);
+}
+
+/* Skeleton Loading */
+.skeleton {
+  background: linear-gradient(90deg,
+      rgba(226, 232, 240, 0.6) 25%,
+      rgba(248, 250, 252, 0.8) 50%,
+      rgba(226, 232, 240, 0.6) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+  border-radius: 9999px;
+}
+
+:root.dark .skeleton {
+  background: linear-gradient(90deg,
+      rgba(30, 41, 59, 0.6) 25%,
+      rgba(51, 65, 85, 0.8) 50%,
+      rgba(30, 41, 59, 0.6) 75%);
+  background-size: 200% 100%;
 }

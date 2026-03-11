@@ -21,21 +21,9 @@ const MenuCard = ({ item }) => {
                 </h3>
             </div>
 
-            <p className="text-ink-black/60 text-sm leading-relaxed mb-8 font-medium">
+            <p className="text-ink-black/60 text-sm leading-relaxed mb-4 font-medium">
                 {item.description}
             </p>
-
-            <div className="flex items-center justify-between mt-auto">
-                <motion.button
-                    whileTap={{ scale: 0.9 }}
-                    className="text-royal-maroon-900 text-xs font-black uppercase tracking-widest hover:text-amber-gold transition-colors"
-                >
-                    Add to Order
-                </motion.button>
-                <div className="w-10 h-10 rounded-full bg-royal-maroon-900/5 flex items-center justify-center group-hover:bg-amber-gold group-hover:shadow-lg group-hover:shadow-amber-gold/20 transition-all duration-300">
-                    <span className="text-royal-maroon-900 group-hover:text-white transition-colors duration-300 font-bold">+</span>
-                </div>
-            </div>
         </motion.div>
     );
 };

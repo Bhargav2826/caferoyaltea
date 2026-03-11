@@ -8,7 +8,7 @@ const SectionTitle = ({ title, subtitle, centered = true }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-amber-gold font-bold tracking-[0.2em] uppercase text-xs mb-3 flex items-center gap-3"
+                className={`text-amber-gold font-bold tracking-[0.2em] uppercase text-xs mb-3 flex items-center gap-3 ${centered ? 'justify-center' : 'justify-start'}`}
             >
                 <span className="w-8 h-[1px] bg-amber-gold/30 block" />
                 {subtitle}

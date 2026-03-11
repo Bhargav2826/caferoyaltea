@@ -1,16 +1,35 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('theme') === 'dark' ||
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
+        return false;
+    });
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        if (isDarkMode) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    }, [isDarkMode]);
+
+    const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
     const navLinks = [
         { name: 'Home', href: '#' },
@@ -37,7 +56,7 @@ const Navbar = () => {
                 </motion.div>
 
                 {/* Desktop Links */}
-                <div className="hidden md:flex space-x-10 items-center">
+                <div className="hidden md:flex space-x-8 items-center">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
@@ -48,6 +67,16 @@ const Navbar = () => {
                             <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-amber-gold transition-all duration-300 group-hover:w-full" />
                         </a>
                     ))}
+
+                    <motion.button
+                        whileHover={{ scale: 1.1, rotate: 10 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={toggleDarkMode}
+                        className="p-2.5 rounded-full bg-royal-maroon-900/5 dark:bg-white/10 text-ink-black transition-colors"
+                    >
+                        {isDarkMode ? <Sun size={18} className="text-amber-gold" /> : <Moon size={18} className="text-royal-maroon-900" />}
+                    </motion.button>
+
                     <motion.button
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
@@ -57,9 +86,15 @@ const Navbar = () => {
                     </motion.button>
                 </div>
 
-                {/* Mobile Toggle */}
-                <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-ink-black p-2 bg-white/50 rounded-lg backdrop-blur-md">
+                {/* Mobile Toggle & Menu Trigger */}
+                <div className="md:hidden flex items-center space-x-4">
+                    <button
+                        onClick={toggleDarkMode}
+                        className="p-2 bg-white/50 dark:bg-slate-800/50 rounded-lg backdrop-blur-md text-ink-black"
+                    >
+                        {isDarkMode ? <Sun size={20} className="text-amber-gold" /> : <Moon size={20} className="text-royal-maroon-900" />}
+                    </button>
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-ink-black p-2 bg-white/50 dark:bg-slate-800/50 rounded-lg backdrop-blur-md">
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>

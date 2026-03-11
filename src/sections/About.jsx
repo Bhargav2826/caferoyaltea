@@ -26,7 +26,6 @@ const About = () => {
                         <SectionTitle
                             title="A Story of Tradition in Every Sip"
                             subtitle="The Royal Heritage"
-                            centered={false}
                         />
                         <p className="text-xl text-ink-black/70 leading-relaxed mb-10 font-medium italic">
                             At Cafe Royal Tea, we don't just serve tea; we serve a tradition that dates back generations in the lush hills of Kerala. Our signature ginger tea is balanced with a secret blend of spices that will transport you straight to God's Own Country.
