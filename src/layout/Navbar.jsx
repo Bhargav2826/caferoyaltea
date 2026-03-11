@@ -39,17 +39,17 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass py-4 shadow-xl' : 'bg-transparent py-8'}`}>
-            <div className="container mx-auto px-6 flex justify-between items-center">
+        <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass py-4 shadow-xl' : 'bg-transparent py-4 md:py-8'}`}>
+            <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     className="flex items-center space-x-4 cursor-pointer group"
                 >
                     <div className="relative group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                        <img src="/logo-navbar.png" alt="Cafe Royal Tea Logo" className="w-20 h-20 object-contain drop-shadow-2xl" />
+                        <img src="/logo-navbar.png" alt="Cafe Royal Tea Logo" className="w-12 h-12 md:w-20 md:h-20 object-contain drop-shadow-2xl" />
                     </div>
-                    <span className="font-display text-2xl font-black tracking-tighter text-ink-black flex items-center">
+                    <span className="font-display text-lg md:text-2xl font-black tracking-tighter text-ink-black flex items-center">
                         CAFE <span className="text-gradient-maroon mx-1.5">ROYAL</span> TEA
                     </span>
                 </motion.div>
@@ -119,7 +119,7 @@ const Navbar = () => {
                                     {link.name}
                                 </a>
                             ))}
-                            <button className="bg-royal-maroon-900 text-silver-100 px-12 py-4 rounded-full font-black text-sm tracking-widest shadow-xl">
+                            <button className="bg-royal-maroon-900 text-silver-100 px-8 py-3 md:px-12 md:py-4 rounded-full font-black text-sm tracking-widest shadow-xl">
                                 ORDER NOW
                             </button>
                         </div>

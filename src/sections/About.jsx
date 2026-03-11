@@ -16,7 +16,7 @@ const About = () => {
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-gold/5 rounded-full blur-[120px]" />
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -27,18 +27,18 @@ const About = () => {
                             title="A Story of Tradition in Every Sip"
                             subtitle="The Royal Heritage"
                         />
-                        <p className="text-xl text-ink-black/70 leading-relaxed mb-10 font-medium italic">
+                        <p className="text-lg md:text-xl text-ink-black/70 leading-relaxed mb-8 md:mb-10 font-medium italic">
                             At Cafe Royal Tea, we don't just serve tea; we serve a tradition that dates back generations in the lush hills of Kerala. Our signature ginger tea is balanced with a secret blend of spices that will transport you straight to God's Own Country.
                         </p>
 
-                        <div className="relative mb-12 py-8 px-10 glass rounded-3xl border-l-8 border-royal-maroon-900 shadow-2xl overflow-hidden group">
+                        <div className="relative mb-10 md:mb-12 py-6 px-6 md:py-8 md:px-10 glass rounded-3xl border-l-[6px] md:border-l-8 border-royal-maroon-900 shadow-2xl overflow-hidden group">
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-royal-maroon-900/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             <p className="text-royal-maroon-900 font-bold text-lg leading-relaxed relative z-10">
                                 "We brought the warmth of a Malayali home to the buzzing tech parks of Whitefield, creating a bridge between heritage and modern life."
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={feature.title}

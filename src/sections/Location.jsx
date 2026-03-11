@@ -17,27 +17,27 @@ const WhatsAppIcon = ({ size = 20, className = "" }) => (
 
 const Location = () => {
     return (
-        <section id="contact" className="py-32 bg-mesh relative overflow-hidden">
+        <section id="contact" className="py-20 md:py-32 bg-mesh relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
                 <SectionTitle
                     title="Find Your Way to Royalty"
                     subtitle="Locate Us in Whitefield"
                 />
 
-                <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-16 bg-white/40 backdrop-blur-3xl p-6 md:p-12 rounded-[3.5rem] border border-white/60 shadow-2xl overflow-hidden">
+                <div className="mt-12 md:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 bg-white/40 backdrop-blur-3xl p-6 md:p-12 rounded-3xl md:rounded-[3.5rem] border border-white/60 shadow-2xl overflow-hidden">
                     {/* Map Section */}
-                    <div className="h-[450px] lg:h-full min-h-[450px] rounded-[2.5rem] overflow-hidden border border-royal-maroon-900/10 group relative shadow-inner">
+                    <div className="h-[300px] md:h-[450px] lg:h-full min-h-[300px] md:min-h-[450px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-royal-maroon-900/10 group relative shadow-inner">
                         <div className="w-full h-full bg-slate-200 relative flex items-center justify-center">
                             <img
                                 src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=1200"
                                 alt="Map Background"
                                 className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                             />
-                            <div className="relative z-10 text-center p-10 glass rounded-[2rem] border-white/40 shadow-2xl backdrop-blur-3xl">
+                            <div className="relative z-10 text-center p-6 md:p-10 glass rounded-2xl md:rounded-[2rem] border-white/40 shadow-2xl backdrop-blur-3xl">
                                 <div className="bg-gradient-to-br from-royal-maroon-900 to-royal-maroon-700 p-4 rounded-full inline-block mb-6 shadow-xl animate-bounce">
                                     <MapPin className="text-silver-100 w-8 h-8" />
                                 </div>
-                                <h4 className="text-3xl font-display font-black text-ink-black mb-3 tracking-tighter">Visit Our Tea Room</h4>
+                                <h4 className="text-xl md:text-3xl font-display font-black text-ink-black mb-3 tracking-tighter">Visit Our Tea Room</h4>
                                 <p className="text-ink-black/60 mb-8 font-medium italic">XPQH+9QF, KIADB Export Promotion Industrial Area,<br />Whitefield, Bengaluru, Karnataka 560066</p>
                                 <div className="flex justify-center w-full">
                                     <Button
@@ -53,8 +53,8 @@ const Location = () => {
                     </div>
 
                     {/* Contact Details */}
-                    <div className="flex flex-col justify-center space-y-12">
-                        <div className="space-y-10">
+                    <div className="flex flex-col justify-center space-y-8 md:space-y-12">
+                        <div className="space-y-6 md:space-y-10">
                             {[
                                 { icon: Clock, title: "Open 24/7", desc: "Always here for your midnight cravings.", color: "text-royal-maroon-900", bg: "bg-royal-maroon-900/5" },
                                 { icon: Phone, title: "Call Us", desc: "For bulk orders & inquiries: +91 89519 91519", color: "text-amber-gold dark:text-royal-maroon-900", bg: "bg-amber-gold/5" },

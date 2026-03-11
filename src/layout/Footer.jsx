@@ -3,10 +3,10 @@ import GoWindLogo from '../assets/JPG.jpg';
 
 const Footer = () => {
     return (
-        <footer className="bg-mesh border-t border-royal-maroon-900/10 pt-24 pb-12 relative overflow-hidden dark:bg-slate-900 transition-colors duration-500">
+        <footer className="bg-mesh border-t border-royal-maroon-900/10 pt-16 md:pt-24 pb-8 md:pb-12 relative overflow-hidden dark:bg-slate-900 transition-colors duration-500">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-royal-maroon-900/10 to-transparent" />
 
-            <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-20">
+            <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-20">
                 <div className="md:col-span-2">
                     <div className="flex items-center space-x-3 mb-8">
                         <img src="/logo-navbar.png" alt="Logo" className="w-16 h-16 object-contain drop-shadow-xl hover:scale-110 transition-transform duration-300" />
@@ -59,7 +59,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="container mx-auto px-6 mt-24 pt-10 border-t border-royal-maroon-900/10 dark:border-white/10">
+            <div className="container mx-auto px-6 mt-16 md:mt-24 pt-8 md:pt-10 border-t border-royal-maroon-900/10 dark:border-white/10">
                 <div className="flex flex-col items-center gap-6 text-center">
                     <p className="text-[#000000] dark:text-[#ffffff] text-[10px] font-black uppercase tracking-[0.5em] !opacity-100">
                         © {new Date().getFullYear()} Cafe Royal Tea

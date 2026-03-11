@@ -26,14 +26,14 @@ const reviews = [
 
 const Reviews = () => {
     return (
-        <section id="reviews" className="py-32 bg-mesh relative overflow-hidden">
+        <section id="reviews" className="py-20 md:py-32 bg-mesh relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <SectionTitle
                     title="Voices of Delight"
                     subtitle="The Royal Verdict"
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mt-12 md:mt-20">
                     {reviews.map((review, index) => (
                         <motion.div
                             key={index}
@@ -42,7 +42,7 @@ const Reviews = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             whileHover={{ y: -8 }}
-                            className="glass p-10 rounded-[2.5rem] relative border-white/60 shadow-xl group hover:border-amber-gold/30 transition-all duration-500"
+                            className="glass p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] relative border-white/60 shadow-xl group hover:border-amber-gold/30 transition-all duration-500"
                         >
                             <Quote className="absolute top-8 right-8 text-royal-maroon-900/5 w-16 h-16 group-hover:text-amber-gold/10 transition-colors" />
 
