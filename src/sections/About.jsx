@@ -12,7 +12,7 @@ const About = () => {
     return (
         <section id="about" className="py-32 bg-mesh relative overflow-hidden">
             {/* Ambient glows */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-royal-maroon-900/5 rounded-full blur-[120px] animate-pulse" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-royal-maroon-900/5 rounded-full blur-[120px] max-md:animate-none animate-pulse" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-gold/5 rounded-full blur-[120px]" />
 
             <div className="container mx-auto px-6 relative z-10">
@@ -60,7 +60,7 @@ const About = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1 }}
-                        className="relative"
+                        className="relative will-change-transform"
                     >
                         <div className="aspect-[4/5] glass rounded-[3rem] p-6 overflow-hidden group border-white/60 shadow-inner">
                             <div className="absolute inset-0 bg-gradient-to-tr from-royal-maroon-900/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -74,7 +74,7 @@ const About = () => {
                         <motion.div
                             animate={{ y: [0, -20, 0], rotate: [0, 2, 0] }}
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -bottom-12 -right-12 glass p-10 rounded-full border-2 border-amber-gold/30 shadow-2xl flex flex-col items-center justify-center backdrop-blur-2xl"
+                            className="absolute -bottom-12 -right-12 glass p-10 rounded-full border-2 border-amber-gold/30 shadow-2xl flex flex-col items-center justify-center backdrop-blur-2xl max-md:scale-75 max-md:-bottom-6 max-md:-right-6"
                         >
                             <span className="text-5xl font-display font-black text-gradient-maroon block mb-1">10+</span>
                             <span className="text-[10px] uppercase tracking-[0.3em] text-royal-maroon-900 font-black text-center max-w-[80px]">Years of Pure Tradition</span>
