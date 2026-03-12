@@ -8,75 +8,165 @@ const TeaCup = ({ isMobile }) => {
     const groupRef = useRef();
     const surfaceRef = useRef();
 
-    // Refined points for a traditional Kerala tea glass
+    // Procedural Ridge Texture for the Glass
+    const ridgeTexture = useMemo(() => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        const ctx = canvas.getContext('2d');
+        // Neutral normal map base
+        ctx.fillStyle = '#8080ff';
+        ctx.fillRect(0, 0, 512, 512);
+        
+        const ridgeCount = 12;
+        for (let i = 0; i < ridgeCount; i++) {
+            const x = (i / ridgeCount) * 512;
+            const w = 512 / ridgeCount;
+            const grad = ctx.createLinearGradient(x, 0, x + w, 0);
+            grad.addColorStop(0, '#6060ff');
+            grad.addColorStop(0.5, '#ffffff');
+            grad.addColorStop(1, '#6060ff');
+            ctx.fillStyle = grad;
+            ctx.fillRect(x, 0, w, 512);
+        }
+        const tex = new THREE.CanvasTexture(canvas);
+        tex.wrapS = THREE.RepeatWrapping;
+        tex.wrapT = THREE.RepeatWrapping;
+        return tex;
+    }, []);
+
+    // Procedural Froth Texture for the Tea Surface
+    const frothTexture = useMemo(() => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 256;
+        canvas.height = 256;
+        const ctx = canvas.getContext('2d');
+        
+        // Base color (creamy tea)
+        ctx.fillStyle = '#D28B47';
+        ctx.fillRect(0, 0, 256, 256);
+        
+        // Add many small bubbles
+        for (let i = 0; i < 400; i++) {
+            const x = Math.random() * 256;
+            const y = Math.random() * 256;
+            const r = Math.random() * 3 + 0.5;
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 240, 220, ${Math.random() * 0.4 + 0.2})`;
+            ctx.fill();
+            // Subtle border for bubbles
+            ctx.strokeStyle = `rgba(139, 69, 19, ${Math.random() * 0.1})`;
+            ctx.stroke();
+        }
+        
+        // Add some larger foam patches
+        for (let i = 0; i < 20; i++) {
+            const x = Math.random() * 256;
+            const y = Math.random() * 256;
+            const r = Math.random() * 15 + 10;
+            const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
+            grad.addColorStop(0, 'rgba(255, 255, 255, 0.2)');
+            grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        const tex = new THREE.CanvasTexture(canvas);
+        return tex;
+    }, []);
+
+    // Traditional "Cutting Chai" glass profile
     const points = useMemo(() => {
         const pts = [];
-        pts.push(new THREE.Vector2(0, -2));
-        pts.push(new THREE.Vector2(1.2, -2));
-        pts.push(new THREE.Vector2(1.5, 0));
-        pts.push(new THREE.Vector2(1.8, 2));
-        pts.push(new THREE.Vector2(1.85, 2.1));
+        // Profile from bottom to top
+        pts.push(new THREE.Vector2(0, -2.5));       // center bottom
+        pts.push(new THREE.Vector2(0.8, -2.5));     // bottom edge
+        pts.push(new THREE.Vector2(0.85, -2));      // slight curve at base
+        pts.push(new THREE.Vector2(1.2, 0.5));      // mid body (widest part of ridges)
+        pts.push(new THREE.Vector2(1.6, 2.8));      // top flared rim
         return pts;
     }, []);
 
-    // Internal liquid body points
+    // Liquid body points (slightly inset)
     const liquidPoints = useMemo(() => {
         const pts = [];
-        pts.push(new THREE.Vector2(0, -1.9));
-        pts.push(new THREE.Vector2(1.1, -1.9));
-        pts.push(new THREE.Vector2(1.4, 0));
-        pts.push(new THREE.Vector2(1.7, 1.95));
+        pts.push(new THREE.Vector2(0, -2.4));
+        pts.push(new THREE.Vector2(0.75, -2.4));
+        pts.push(new THREE.Vector2(1.15, 0.5));
+        pts.push(new THREE.Vector2(1.45, 1.8));     // tea level
         return pts;
     }, []);
 
     useFrame((state) => {
         const time = state.clock.getElapsedTime();
-        // Horizontal oscillation
-        const moveX = Math.sin(time * 1.2) * 0.5;
+        const moveX = Math.sin(time * 1.2) * 0.4;
 
         if (groupRef.current) {
             groupRef.current.position.x = moveX;
         }
 
         if (surfaceRef.current) {
-            // Subtle wobble
             const speed = Math.cos(time * 1.2) * 1.2;
             surfaceRef.current.position.x = -speed * 0.05;
             surfaceRef.current.rotation.y = Math.sin(time * 2) * 0.05;
+            // Subtle rotation to surface froth
+            surfaceRef.current.rotation.z = time * 0.1;
         }
     });
 
-    const segments = isMobile ? 24 : 64;
+    const segments = isMobile ? 32 : 64;
 
     return (
         <Float speed={1.5} rotationIntensity={0} floatIntensity={0.2}>
-            <group ref={groupRef} scale={isMobile ? [0.6, 0.6, 0.6] : [0.8, 0.8, 0.8]} position={[0, -1, 0]}>
-                {/* Glass Cup */}
+            <group ref={groupRef} scale={isMobile ? [0.65, 0.65, 0.65] : [0.6, 0.6, 0.6]} position={[0, -0.5, 0]}>
+                
+                {/* Cutting Chai Ridged Glass */}
                 <mesh ref={meshRef} castShadow={!isMobile} receiveShadow={!isMobile}>
                     <latheGeometry args={[points, segments]} />
-                    <meshStandardMaterial
-                        color="#CC8400"
-                        roughness={0.05}
+                    <meshPhysicalMaterial
+                        color="#ffffff"
                         metalness={0.1}
+                        roughness={0.05}
                         transparent
-                        opacity={0.5}
+                        opacity={0.3}
+                        transmission={0.95}
+                        thickness={0.8}
+                        envMapIntensity={1.5}
+                        normalMap={ridgeTexture}
+                        normalScale={new THREE.Vector2(0.3, 0.3)}
+                        clearcoat={1}
+                        clearcoatRoughness={0.1}
                     />
                 </mesh>
 
-                {/* Liquid Body inside */}
-                <mesh>
+                {/* Tea Liquid Body */}
+                <mesh position={[0, 0, 0]}>
                     <latheGeometry args={[liquidPoints, segments]} />
-                    <meshStandardMaterial color="#8B4513" roughness={0.3} />
+                    <meshStandardMaterial 
+                        color="#B97A45" 
+                        roughness={0.3} 
+                        metalness={0}
+                        emissive="#331100"
+                        emissiveIntensity={0.1}
+                    />
                 </mesh>
 
-                {/* Tea Liquid surface */}
+                {/* Tea Surface (Froth/Bubbles effect) */}
                 <mesh
                     ref={surfaceRef}
-                    position={[0, 2.0, 0]}
+                    position={[0, 1.81, 0]}
                     rotation={[-Math.PI / 2, 0, 0]}
                 >
-                    <circleGeometry args={[1.75, isMobile ? 12 : 32]} />
-                    <meshStandardMaterial color="#8B4513" roughness={0.3} emissive="#442200" emissiveIntensity={0.1} />
+                    <circleGeometry args={[1.45, segments]} />
+                    <meshStandardMaterial 
+                        map={frothTexture}
+                        roughness={0.8} 
+                        emissive="#221100" 
+                        emissiveIntensity={0.05}
+                    />
                 </mesh>
             </group>
         </Float>
