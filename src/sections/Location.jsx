@@ -26,25 +26,25 @@ const Location = () => {
 
                 <div className="mt-12 md:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 bg-white/40 backdrop-blur-3xl p-6 md:p-12 rounded-3xl md:rounded-[3.5rem] border border-white/60 shadow-2xl overflow-hidden">
                     {/* Map Section */}
-                    <div className="h-[300px] md:h-[450px] lg:h-full min-h-[300px] md:min-h-[450px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-royal-maroon-900/10 group relative shadow-inner">
-                        <div className="w-full h-full bg-slate-200 relative flex items-center justify-center">
+                    <div className="min-h-[400px] md:min-h-[450px] lg:h-full rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-royal-maroon-900/10 group relative shadow-inner">
+                        <div className="w-full h-full bg-slate-200 relative flex items-center justify-center p-4">
                             <img
                                 src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=1200"
                                 alt="Map Background"
-                                className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                                className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                             />
-                            <div className="relative z-10 text-center p-6 md:p-10 glass rounded-2xl md:rounded-[2rem] border-white/40 shadow-2xl backdrop-blur-3xl">
-                                <div className="bg-gradient-to-br from-royal-maroon-900 to-royal-maroon-700 p-4 rounded-full inline-block mb-6 shadow-xl animate-bounce">
-                                    <MapPin className="text-silver-100 w-8 h-8" />
+                            <div className="relative z-10 text-center p-5 md:p-10 glass rounded-2xl md:rounded-[2rem] border-white/40 shadow-2xl backdrop-blur-3xl w-full max-w-[320px] md:max-w-none">
+                                <div className="bg-gradient-to-br from-royal-maroon-900 to-royal-maroon-700 p-3 md:p-4 rounded-full inline-block mb-4 md:mb-6 shadow-xl animate-bounce">
+                                    <MapPin className="text-silver-100 w-6 h-6 md:w-8 md:h-8" />
                                 </div>
-                                <h4 className="text-xl md:text-3xl font-display font-black text-ink-black mb-3 tracking-tighter">Visit Our Tea Room</h4>
-                                <p className="text-ink-black/60 mb-8 font-medium italic">XPQH+9QF, KIADB Export Promotion Industrial Area,<br />Whitefield, Bengaluru, Karnataka 560066</p>
+                                <h4 className="text-lg md:text-3xl font-display font-black text-ink-black mb-2 md:mb-3 tracking-tighter">Visit Our Tea Room</h4>
+                                <p className="text-ink-black/80 text-[10px] md:text-sm mb-6 md:mb-8 font-medium italic leading-relaxed">XPQH+9QF, KIADB Export Promotion Industrial Area,<br />Whitefield, Bengaluru, Karnataka 560066</p>
                                 <div className="flex justify-center w-full">
                                     <Button
                                         onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=XPQH%2B9QF%2C+KIADB+Export+Promotion+Industrial+Area%2C+Whitefield%2C+Bengaluru%2C+Karnataka+560066', '_blank')}
-                                        className="px-6 py-3 flex flex-row items-center justify-center gap-2.5 shadow-md shadow-royal-maroon-900/10 uppercase tracking-widest text-xs font-bold group"
+                                        className="px-5 py-2.5 md:px-6 md:py-3 flex flex-row items-center justify-center gap-2.5 shadow-md shadow-royal-maroon-900/10 uppercase tracking-widest text-[10px] md:text-xs font-bold group"
                                     >
-                                        <Navigation size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                        <Navigation size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                         <span>OPEN IN MAPS</span>
                                     </Button>
                                 </div>

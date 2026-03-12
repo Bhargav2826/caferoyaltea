@@ -15,9 +15,9 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="mb-6 pointer-events-none"
+                    className="mb-8 md:mb-6 pointer-events-none"
                 >
-                    <span className="text-amber-gold font-bold tracking-[0.4em] uppercase text-xs md:text-sm bg-white/40 dark:bg-slate-800/40 px-4 py-1 rounded-full backdrop-blur-sm border border-amber-gold/20 dark:border-amber-gold/40 shadow-sm">
+                    <span className="text-amber-gold font-black tracking-[0.2em] md:tracking-[0.4em] uppercase text-[10px] md:text-sm bg-white/60 dark:bg-slate-800/60 px-5 py-2 md:px-4 md:py-1 rounded-full backdrop-blur-md border border-amber-gold/20 dark:border-amber-gold/40 shadow-md inline-block">
                         Authentic Kerala Flavors
                     </span>
                 </motion.div>
