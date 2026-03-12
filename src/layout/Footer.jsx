@@ -65,13 +65,8 @@ const Footer = () => {
                         @ 2026 CAFE ROYAL TEA
                     </p>
 
-                    <a
-                        href="https://gowind.in"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 group transition-all duration-500 hover:scale-105"
-                    >
-                        <div className="w-10 h-10 rounded-full overflow-hidden border border-royal-maroon-900/10 dark:border-white/10 p-1.5 bg-white dark:bg-slate-800 transition-transform group-hover:scale-110 group-hover:-rotate-6 shadow-md shrink-0">
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full overflow-hidden border border-royal-maroon-900/10 dark:border-white/10 p-1.5 bg-white dark:bg-slate-800 shadow-md shrink-0">
                             <img src={GoWindLogo} alt="Go Wind Logo" className="w-full h-full object-contain" />
                         </div>
                         <div className="text-left">
@@ -79,7 +74,7 @@ const Footer = () => {
                                 Go Wind - Powering Your Digital Growth
                             </span>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </footer>
