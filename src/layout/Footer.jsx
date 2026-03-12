@@ -70,7 +70,7 @@ const Footer = () => {
                             <img src={GoWindLogo} alt="Go Wind Logo" className="w-full h-full object-contain" />
                         </div>
                         <div className="text-left">
-                            <span className="text-black dark:text-white text-[10px] md:text-[11px] font-black uppercase tracking-widest block leading-tight">
+                            <span className="text-black dark:text-white text-[9px] min-[375px]:text-[10px] md:text-[11px] font-black uppercase tracking-wider min-[375px]:tracking-widest block leading-tight whitespace-nowrap">
                                 Go Wind - Powering Your Digital Growth
                             </span>
                         </div>
