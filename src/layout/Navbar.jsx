@@ -50,7 +50,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass py-4 shadow-xl' : 'bg-transparent md:bg-transparent py-4 md:py-8'} ${!scrolled && 'max-md:bg-silver-100/10 max-md:backdrop-blur-sm'}`}>
+        <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass py-4 shadow-xl' : 'bg-transparent py-4 md:py-8'} ${!scrolled && 'max-md:bg-white/10 max-md:backdrop-blur-xl'}`}>
             <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
